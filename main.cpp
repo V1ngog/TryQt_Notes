@@ -74,6 +74,5 @@ int main(int argc, char *argv[]) {
     window.setCentralWidget(CentralWidget);
 
     window.show();
-
     return app.exec();
 }
