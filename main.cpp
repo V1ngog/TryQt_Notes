@@ -31,6 +31,8 @@ int main(int argc, char *argv[]) {
     ButtExit->setMinimumWidth(150);
 
     ButtCreateNotes->setToolTip("Создать новую заметку");
+    ButtShowNotes->setToolTip("Показать заметки");
+    ButtExit->setToolTip("Выход");
 
     // ButtCreateNotes->setMaximumWidth(150);
     // ButtShowNotes->setMaximumWidth(150);
