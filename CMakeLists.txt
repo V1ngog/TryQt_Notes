@@ -10,6 +10,8 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia)
 
 qt_add_executable(ToDoList
     src/main.cpp
+    src/mainmenu.cpp
+    src/basewin.cpp
 )
 
 target_link_libraries(ToDoList PRIVATE Qt6::Widgets Qt6::Multimedia)

@@ -3,28 +3,35 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
+#include <QStackedLayout>
+#include <QMap>
+#include <QPushButton>
+#include "basepage.h"
 
 class BaseWindow : public QWidget 
 {
     Q_OBJECT
     
+
 protected:
-    int const WIN_W = 800;
-    int const WIN_H = 600;
-    QVBoxLayout *mainlayout;
+    const int WIN_W = 800;
+    const int WIN_H = 600;
+    
+    QVBoxLayout *mainLayout;
+    QStackedLayout *stackedLayout;
+    QMap<QString, BasePage*> pages;
 
 public:
-    explicit BaseWindow(QWidget *parent = nullptr) : QWidget(parent) {
-        mainlayout = new QVBoxLayout(this);
-        setLayout(mainlayout);
-        resize(WIN_W, WIN_H);
-    }
-
+    explicit BaseWindow(QWidget *parent = nullptr);
     virtual ~BaseWindow() {}
+    
+    void registerPage(const QString &name, BasePage *page);
+    void navigateTo(const QString &name);
+    virtual void addNavButton(QPushButton *button);
+    BasePage* currentPage();
+    
+    virtual void onWindowShow() {}
+    virtual void onWindowHide() {}
 
-    virtual void setupUI() = 0;
-    virtual void connectSignals() = 0;
-    virtual void applyStyles() {}
-    virtual void setupShortcuts() {}
 };
 #endif
