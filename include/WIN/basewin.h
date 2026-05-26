@@ -27,11 +27,9 @@ public:
     
     void registerPage(const QString &name, BasePage *page);
     void navigateTo(const QString &name);
-    virtual void addNavButton(QPushButton *button);
     BasePage* currentPage();
-    
-    virtual void onWindowShow() {}
-    virtual void onWindowHide() {}
+
+    virtual void addNavButton(QPushButton *button) {}
 
 };
 #endif
