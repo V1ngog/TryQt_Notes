@@ -8,5 +8,5 @@ cd build
 cmake .. -G "MinGW Makefiles" -DCMAKE_PREFIX_PATH=C:/Qt/6.11.0/mingw_64
 cmake --build .
 
-echo Готово!
+echo Complite!
 pause

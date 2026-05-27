@@ -11,6 +11,7 @@ qt_add_executable(ToDoList
     src/main.cpp
     src/WIN/basewin.cpp
     src/WIN/mainwin.cpp
+    src/PAGE/mainpage.cpp
     include/WIN/basewin.h      # ← добавить
     include/WIN/mainwin.h      # ← добавить
     include/PAGE/basepage.h    # ← добавить
