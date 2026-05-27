@@ -7,8 +7,8 @@ MainWindow::MainWindow(QWidget *parent) : BaseWindow(parent) {
     showPage = new ShowPage(this);
     registerPage("Show", showPage);
 
-    addPage = new AddPage(this);
-    registerPage("Add", addPage);
+    createNotePage = new CreateNotePage(this);
+    registerPage("Add", createNotePage);
 
     navigateTo("Menu");
 
@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent) : BaseWindow(parent) {
     navigateTo("Menu");
     });
 
-    connect(addPage, &AddPage::noteAdded, this, [this]() {
+    connect(createNotePage, &CreateNotePage::noteCreated, this, [this]() {
     navigateTo("Menu");
     });
 

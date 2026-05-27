@@ -28,7 +28,8 @@ QStringList NoteManager::loadNotes()
     return notes;
 }
 
-void NoteManager::saveNotes(const QStringList &notes) {
+void NoteManager::saveNotes(const QStringList &notes)
+{
     QFile file(getFilePath());
 
     if (file.open(QIODevice::WriteOnly)) {
