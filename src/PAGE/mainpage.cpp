@@ -12,16 +12,24 @@ MenuPage::MenuPage(QWidget *parent) : BasePage(parent) {
     exitButton->setFixedSize(200, 50);
     
     watermark = new QLabel("Vingog's Production");
-    helpHLayout = new QHBoxLayout();
-    helpHLayout->addWidget(watermark);
-    helpHLayout->addStretch();
 
-    layout->addLayout(helpHLayout);
+    QHBoxLayout *helpHLayout1 = new QHBoxLayout();
+    helpHLayout1->addStretch();
+    helpHLayout1->addWidget(watermark);
+
+    titelText = new QLabel("ToDo-List");
+    titelText->setStyleSheet("font: bold 24px;");
+
+    QHBoxLayout *helpHLayout2 = new QHBoxLayout();
+    helpHLayout2->addWidget(titelText, 0, Qt::AlignCenter);
+
+    layout->addLayout(helpHLayout2);
     layout->addStretch();
     layout->addWidget(addButton, 0, Qt::AlignCenter);
     layout->addWidget(showButton, 0, Qt::AlignCenter);
     layout->addWidget(exitButton, 0, Qt::AlignCenter);
     layout->addStretch();
+    layout->addLayout(helpHLayout1);
     
     setLayout(layout);
 }

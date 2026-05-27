@@ -12,10 +12,14 @@ qt_add_executable(ToDoList
     src/WIN/basewin.cpp
     src/WIN/mainwin.cpp
     src/PAGE/mainpage.cpp
-    include/WIN/basewin.h      # ← добавить
-    include/WIN/mainwin.h      # ← добавить
-    include/PAGE/basepage.h    # ← добавить
-    include/PAGE/mainpage.h    # ← добавить
+    src/PAGE/notemanager.cpp
+    src/PAGE/showpage.cpp
+    include/WIN/basewin.h      
+    include/WIN/mainwin.h      
+    include/PAGE/basepage.h    
+    include/PAGE/mainpage.h    
+    include/PAGE/notemanager.h
+    include/PAGE/showpage.h
 )
 
 target_link_libraries(ToDoList PRIVATE Qt6::Widgets)

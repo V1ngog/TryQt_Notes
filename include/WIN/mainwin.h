@@ -3,6 +3,7 @@
 
 #include "basewin.h"
 #include "mainpage.h"
+#include "showpage.h"
 
 class MainWindow : public BaseWindow
 {
@@ -10,13 +11,13 @@ class MainWindow : public BaseWindow
 
 private:
     MenuPage *menuPage;
+    ShowPage *showPage;
 
 private slots:
     void onAddClicked() {}
-    void onShowClicked() {}
+    void onShowClicked();
     void onExitClicked() {close();}
 
-    
 public:
     explicit MainWindow(QWidget *parent = nullptr);
 

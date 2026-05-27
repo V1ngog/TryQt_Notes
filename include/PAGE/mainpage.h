@@ -18,6 +18,7 @@ public:
     QPushButton *showButton;
     QPushButton *exitButton;
     QLabel *watermark;
-    QHBoxLayout *helpHLayout;
+    QLabel *titelText;
+
 };
 #endif
