@@ -5,6 +5,7 @@
 #include "mainpage.h"
 #include "showpage.h"
 #include "createnotepage.h"
+#include "editnotepage.h"
 
 class MainWindow : public BaseWindow
 {
@@ -14,10 +15,13 @@ private:
     MenuPage *menuPage;
     ShowPage *showPage;
     CreateNotePage *createNotePage;
+    EditNotePage *editNotePage;
+
 
 private slots:
     void onAddClicked();
     void onShowClicked();
+    void onEditRequested(int noteId, const QString &text);
     void onExitClicked() {close();}
 
 public:

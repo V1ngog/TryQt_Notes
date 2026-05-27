@@ -17,6 +17,7 @@ public:
 
 signals:
     void exitRequested();
+    void editRequested(int noteId, const QString &text);
     
 private slots:
     void onDeleteClicked();

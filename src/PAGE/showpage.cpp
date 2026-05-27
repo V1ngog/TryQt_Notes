@@ -32,6 +32,12 @@ ShowPage::ShowPage(QWidget *parent) : BasePage(parent)
 
     connect(exitButton, &QPushButton::clicked, this, &ShowPage::exitRequested);
     connect(deleteButton, &QPushButton::clicked, this, &ShowPage::onDeleteClicked);
+    connect(listNotes, &QListWidget::itemDoubleClicked, this, [this](QListWidgetItem *item) {
+        int row = listNotes->row(item);
+        if (row >= 0 && row < notes.size()) {
+            emit editRequested(row, notes[row]);
+        }
+    });
 }
 
 void ShowPage::onPageEnter() 

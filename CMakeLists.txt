@@ -16,6 +16,8 @@ qt_add_executable(ToDoList
     src/PAGE/showpage.cpp
     src/PAGE/createnotepage.cpp
     src/PAGE/noteeditorwidget.cpp
+    src/PAGE/editnotepage.cpp
+    include/PAGE/editnotepage.h
     include/PAGE/noteeditorwidget.h
     include/PAGE/createnotepage.h
     include/WIN/basewin.h      
