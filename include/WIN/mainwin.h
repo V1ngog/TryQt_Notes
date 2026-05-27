@@ -4,6 +4,7 @@
 #include "basewin.h"
 #include "mainpage.h"
 #include "showpage.h"
+#include "addpage.h"
 
 class MainWindow : public BaseWindow
 {
@@ -12,9 +13,10 @@ class MainWindow : public BaseWindow
 private:
     MenuPage *menuPage;
     ShowPage *showPage;
+    AddPage *addPage;
 
 private slots:
-    void onAddClicked() {}
+    void onAddClicked();
     void onShowClicked();
     void onExitClicked() {close();}
 

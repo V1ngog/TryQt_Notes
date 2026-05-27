@@ -18,10 +18,14 @@ public:
 signals:
     void exitRequested();
     
+private slots:
+    void onDeleteClicked();
+
 private:
     QStringList notes;
     QListWidget *listNotes;
     QPushButton *exitButton;
+    QPushButton *deleteButton;
 };
 
 #endif

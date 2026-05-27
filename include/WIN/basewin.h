@@ -29,7 +29,5 @@ public:
     void navigateTo(const QString &name);
     BasePage* currentPage();
 
-    virtual void addNavButton(QPushButton *button) {}
-
 };
 #endif
