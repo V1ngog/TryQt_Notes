@@ -53,7 +53,7 @@ void NoteManager::addNote(const QString &note)
 void NoteManager::deleteNote(int index)
 {
     QStringList notes = loadNotes();
-    if (index >= 0 && index <= notes.size()) {
+    if (index >= 0 && index < notes.size()) {
         notes.removeAt(index);
         saveNotes(notes);
     }

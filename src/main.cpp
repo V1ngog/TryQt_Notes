@@ -1,6 +1,5 @@
 #include <QApplication>
 #include "mainwin.h"
-#include "notemanager.h"
 
 int main(int argc, char *argv[])
 {

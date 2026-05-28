@@ -13,7 +13,13 @@ class MenuPage : public BasePage
 
 public:
     explicit MenuPage(QWidget *parent = nullptr);
-    
+
+signals:
+    void addRequested();
+    void showRequested();
+    void exitRequested();
+
+private:
     QPushButton *addButton;
     QPushButton *showButton;
     QPushButton *exitButton;

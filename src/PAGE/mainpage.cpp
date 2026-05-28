@@ -32,4 +32,8 @@ MenuPage::MenuPage(QWidget *parent) : BasePage(parent) {
     layout->addLayout(helpHLayout1);
     
     setLayout(layout);
+
+    connect(addButton, &QPushButton::clicked, this, &MenuPage::addRequested);
+    connect(showButton, &QPushButton::clicked, this, &MenuPage::showRequested);
+    connect(exitButton, &QPushButton::clicked, this, &MenuPage::exitRequested);
 }

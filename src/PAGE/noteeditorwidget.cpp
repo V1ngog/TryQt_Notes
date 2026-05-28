@@ -1,5 +1,4 @@
 #include "noteeditorwidget.h"
-#include "notemanager.h"
 #include <QTextEdit>
 #include <QPushButton>
 #include <QVBoxLayout>

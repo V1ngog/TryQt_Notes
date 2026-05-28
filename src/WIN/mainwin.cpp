@@ -15,9 +15,9 @@ MainWindow::MainWindow(QWidget *parent) : BaseWindow(parent) {
 
     navigateTo("Menu");
 
-    connect(menuPage->addButton, &QPushButton::clicked, this, &MainWindow::onAddClicked);
-    connect(menuPage->showButton, &QPushButton::clicked, this, &MainWindow::onShowClicked);
-    connect(menuPage->exitButton, &QPushButton::clicked, this, &MainWindow::onExitClicked);
+    connect(menuPage, &MenuPage::addRequested, this, &MainWindow::onAddClicked);
+    connect(menuPage, &MenuPage::showRequested, this, &MainWindow::onShowClicked);
+    connect(menuPage, &MenuPage::exitRequested, this, &MainWindow::onExitClicked);
 
     connect(showPage, &ShowPage::exitRequested, this, [this]() {
     navigateTo("Menu");
