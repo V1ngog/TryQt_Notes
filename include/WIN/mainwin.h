@@ -19,10 +19,7 @@ private:
 
 
 private slots:
-    void onAddClicked();
-    void onShowClicked();
     void onEditRequested(int noteId, const QString &text);
-    void onExitClicked() {close();}
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);

@@ -15,15 +15,21 @@ MainWindow::MainWindow(QWidget *parent) : BaseWindow(parent) {
 
     navigateTo("Menu");
 
-    connect(menuPage, &MenuPage::addRequested, this, &MainWindow::onAddClicked);
-    connect(menuPage, &MenuPage::showRequested, this, &MainWindow::onShowClicked);
-    connect(menuPage, &MenuPage::exitRequested, this, &MainWindow::onExitClicked);
+    connect(menuPage, &MenuPage::addRequested, this, [this]() {
+    navigateTo("Create");
+    });
+
+    connect(menuPage, &MenuPage::showRequested, this, [this]() {
+    navigateTo("Show");
+    });
+
+    connect(menuPage, &MenuPage::exitRequested, this, [this]() {
+    close();
+    });
 
     connect(showPage, &ShowPage::exitRequested, this, [this]() {
     navigateTo("Menu");
     });
-
-    connect(showPage, &ShowPage::editRequested, this, &MainWindow::onEditRequested);
 
     connect(createNotePage, &CreateNotePage::noteCreated, this, [this]() {
     navigateTo("Menu");
@@ -33,15 +39,9 @@ MainWindow::MainWindow(QWidget *parent) : BaseWindow(parent) {
     navigateTo("Show");
     });
 
+    connect(showPage, &ShowPage::editRequested, this, &MainWindow::onEditRequested);
+
     setWindowTitle("ToDo-List");
-}
-
-void MainWindow::onAddClicked() {
-    navigateTo("Create");
-}
-
-void MainWindow::onShowClicked() {
-    navigateTo("Show");
 }
 
 void MainWindow::onEditRequested(int noteId, const QString &text)

@@ -2,6 +2,7 @@
 #include "notemanager.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QMessageBox>
 
 ShowPage::ShowPage(QWidget *parent) : BasePage(parent)
 {
@@ -54,7 +55,12 @@ void ShowPage::onPageEnter()
 void ShowPage::onDeleteClicked() {
     int row = listNotes->currentRow();
     if (row >= 0) {
-        NoteManager::deleteNote(row);
-        onPageEnter(); 
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::question(this, "Delete", "Delete this note?",
+                                      QMessageBox::Yes | QMessageBox::No);
+        if (reply == QMessageBox::Yes) {
+            NoteManager::deleteNote(row);
+            onPageEnter();
+        }
     }
 }
